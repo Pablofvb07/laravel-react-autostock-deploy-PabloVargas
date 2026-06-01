@@ -1,0 +1,14 @@
+@use 'variables' as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: $light-gray;
+  color: #1e293b;
+  font-size: 14px;
+}
