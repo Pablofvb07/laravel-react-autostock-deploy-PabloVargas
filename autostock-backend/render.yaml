@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: autostock-backend
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
