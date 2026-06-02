@@ -1,0 +1,34 @@
+version: "3.9"
+
+# ============================================================
+# docker-compose.yml — Solo para pruebas LOCALES
+# Para producción, usa Railway o Render directamente.
+# ============================================================
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      APP_NAME: AutoStock
+      APP_ENV: production
+      APP_KEY: base64:nPvo8GGrVtZRBCJ7TDHz6hZiegiS3QnBdwn/++ocXf8=
+      APP_DEBUG: "false"
+      APP_URL: http://localhost:8080
+
+      # Apunta a tu Supabase real
+      DB_CONNECTION: pgsql
+      DB_HOST: aws-1-us-west-2.pooler.supabase.com
+      DB_PORT: 5432
+      DB_DATABASE: postgres
+      DB_USERNAME: postgres.rajgsfdjbxnjzbaqxozb
+      DB_PASSWORD: PIe1TSCYadYY5cXW
+
+      SESSION_DRIVER: cookie
+      CACHE_STORE: array
+      LOG_CHANNEL: stderr
+      LOG_LEVEL: debug
+    restart: unless-stopped
