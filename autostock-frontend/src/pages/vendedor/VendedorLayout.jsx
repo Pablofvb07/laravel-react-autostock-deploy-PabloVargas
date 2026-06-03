@@ -6,7 +6,6 @@ import Swal from 'sweetalert2';
 function VendedorLayout() {
   const { user, logout } = useAuth();
   const navigate         = useNavigate();
-
   const handleLogout = async () => {
     const result = await Swal.fire({
       icon: 'question',
@@ -58,6 +57,11 @@ function VendedorLayout() {
           <span>{user?.name}</span>
           <button onClick={handleLogout}>🚪 Salir</button>
         </section>
+        <section className="vendedor_dashboard_anterior">
+          <table className="vendedor_dashboard">
+
+          </table>
+          </section>
       </nav>
 
       <main className="vendedor-content">
